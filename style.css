@@ -1,0 +1,16 @@
+input {
+    display: none;
+}
+
+input[type=radio]:checked + img {
+    border: solid 3px blue;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+button {
+    display: block;
+}
