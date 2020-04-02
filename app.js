@@ -1,4 +1,4 @@
-import checkResult from '../check-result.js;'
+import { checkResult } from './check-result.js';
 
 const playButton = document.getElementById('play-button');
 const resetButton = document.getElementById('reset-button');
@@ -24,24 +24,22 @@ function getRandomThrow() {
     }
 }
 
-console.log(computerChoice);
-
 playButton.addEventListener('click', () => {
     const userChoice = document.querySelector('input[type=radio]:checked');
-    let UserThrow = userChoice.value;
+    let userThrow = userChoice.value;
     let computerThrow = getRandomThrow();
     if (checkResult(userThrow, computerThrow) === 'wins') {
         userWins ++;
-        gameWon.textContent = userWins;
+        winsDiv.textContent = userWins;
     } else if (checkResult(userThrow, computerThrow) === 'loses') {
         userLoses ++;
-        gameLost.textContent = userLoses;
-    } else (checkResult(userThrow, computerThrow) === 'draws') {
+        lossesDiv.textContent = userLoses;
+    } else if (checkResult(userThrow, computerThrow) === 'draws') {
         userDraws ++;
-        gameDrawn.textContent = userDraws;
+        drawsDiv.textContent = userDraws;
         gameTotal ++;
     }
-};
+});
 
 resetButton.addEventListener('click', () => {
     wins = 0;
