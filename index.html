@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section>
+        <h1>Let's Play Rock-Paper-Scissors!</h1>
+    </section>
+
+    <section>
+        <p><b><em>You know the rules ... :</p></b></em></p>
+            <ul>
+                <li>Rock beats scissors;</li>
+                <li>Paper beats rock;</li>
+                <li>Scissors beats paper;</li>
+            </ul>
+        <p>Make your selection by clicking on one of the three icons below,<br>
+        hit the Play button, and throw your hand in agains a randomly-<br>
+        generated computer hand.  Let's see how you do — good luck!</p>
+    </section>
+
+    <div id="rock-paper-scissors">
+        <label>
+            <input name="hand" type="radio" value="rock" checked/>
+                <img src="https://cdn4.iconfinder.com/data/icons/hand-sign/100/Hand_11-512.png" />
+        </label>
+        <label>
+            <input name="hand" type="radio" value="paper"/>
+                <img src="https://cdn4.iconfinder.com/data/icons/proglyphs-signs-and-symbols/512/Stop_Sign-512.png" />
+        </label>
+        <label>
+            <input name="hand" type="radio" value="scissors"/>
+                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/hand-scissors-o-512.png" />
+        </label>
+    </div>
+        <!-- play button -->
+    <button id="play-button">Play</button>
+        <!-- score section -->
+    <div id="score-section">
+        <div>Wins: <span id="wins"></span></div>
+        <div>Losses: <span id="losses"></span></div>
+        <div>Draws: <span id="draws"></span></div>    
+        <div>Games: <span id="totals"></span></div>
+    </div>
+        <!-- reset button -->
+    <button id="reset-button">Reset</button>
+
+    <script type="module" src="app.js"></script>
+</body>
+    
+</html>
