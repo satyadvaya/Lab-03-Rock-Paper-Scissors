@@ -1,17 +1,14 @@
-import checkResult from '../check-result.js;'
+import { checkResult } from './check-result.js';
 
 const playButton = document.getElementById('play-button');
 const resetButton = document.getElementById('reset-button');
 const winsDiv = document.getElementById('wins');
-const lossesDiv = document.getElementById('loses');
+const losesDiv = document.getElementById('loses');
 const drawsDiv = document.getElementById('draws');
-const playsTotal = document.getElementById('total');
 
 let userWins = 0;
 let userLoses = 0;
 let userDraws = 0;
-let gameTotal = 0;
-
 
 function getRandomThrow() {
     const computerChoice = Math.floor(Math.random() * 3 + 1) ;
@@ -24,28 +21,27 @@ function getRandomThrow() {
     }
 }
 
-console.log(computerChoice);
-
 playButton.addEventListener('click', () => {
     const userChoice = document.querySelector('input[type=radio]:checked');
-    let UserThrow = userChoice.value;
+    let userThrow = userChoice.value;
     let computerThrow = getRandomThrow();
     if (checkResult(userThrow, computerThrow) === 'wins') {
         userWins ++;
-        gameWon.textContent = userWins;
+        winsDiv.textContent = userWins;
     } else if (checkResult(userThrow, computerThrow) === 'loses') {
         userLoses ++;
-        gameLost.textContent = userLoses;
-    } else (checkResult(userThrow, computerThrow) === 'draws') {
+        losesDiv.textContent = userLoses;
+    } else if (checkResult(userThrow, computerThrow) === 'draws') {
         userDraws ++;
-        gameDrawn.textContent = userDraws;
-        gameTotal ++;
+        drawsDiv.textContent = userDraws;
     }
-};
+});
 
 resetButton.addEventListener('click', () => {
-    wins = 0;
-    totals = 0;
+    userWins = 0;
+    userLoses = 0;
+    userDraws = 0;
     winsDiv.textContent = '';
-    totalsDiv.textContent = '';  
+    losesDiv.textContent = '';
+    drawsDiv.textContent = '';
 });

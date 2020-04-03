@@ -1,23 +1,21 @@
-export default checkResult;
-
-const checkResult = (userThrow, computerThrow) => {
+export function checkResult(userThrow, computerThrow) {
     if (userThrow === 'rock' && computerThrow === 'rock') {
         return 'draws';
-    } if (userThrow === 'rock' && computerThrow === 'paper') {
+    } else if (userThrow === 'rock' && computerThrow === 'paper') {
         return 'loses';
-    } if (userThrow === 'rock' && computerThrow === 'scisors') {
+    } else if (userThrow === 'rock' && computerThrow === 'scissors') {
         return 'wins';
-    } if (userThrow === 'paper' && computerThrow === 'rock') {
+    } else if (userThrow === 'paper' && computerThrow === 'rock') {
         return 'wins';
-    } if (userThrow === 'paper' && computerThrow === 'paper') {
+    } else if (userThrow === 'paper' && computerThrow === 'paper') {
         return 'draws';
-    } if (userThrow === 'paper' && computerThrow === 'scisors') {
+    } else if (userThrow === 'paper' && computerThrow === 'scissors') {
         return 'loses';
-    } if (userThrow === 'scisors' && computerThrow === 'rock') {
+    } else if (userThrow === 'scissors' && computerThrow === 'rock') {
         return 'loses';
-    } if (userThrow === 'scisors' && computerThrow === 'paper') {
+    } else if (userThrow === 'scissors' && computerThrow === 'paper') {
         return 'wins';
     } else {
         return 'draws';
     }
-};
+}
