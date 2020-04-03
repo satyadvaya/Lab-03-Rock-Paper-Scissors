@@ -20,7 +20,7 @@ test('time to test a function', function(assert) {
     // const wins = checkResult('rock', 'scisors');
     // const draws = checkResult('rock', 'rock');
     // const loses = checkResult('rock', 'scissors');
-    
+
     //Assert
     // Make assertions about what is expected valid result
     

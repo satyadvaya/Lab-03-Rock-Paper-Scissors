@@ -3,15 +3,12 @@ import { checkResult } from './check-result.js';
 const playButton = document.getElementById('play-button');
 const resetButton = document.getElementById('reset-button');
 const winsDiv = document.getElementById('wins');
-const lossesDiv = document.getElementById('loses');
+const losesDiv = document.getElementById('loses');
 const drawsDiv = document.getElementById('draws');
-const playsTotal = document.getElementById('total');
 
 let userWins = 0;
 let userLoses = 0;
 let userDraws = 0;
-let gameTotal = 0;
-
 
 function getRandomThrow() {
     const computerChoice = Math.floor(Math.random() * 3 + 1) ;
@@ -33,17 +30,18 @@ playButton.addEventListener('click', () => {
         winsDiv.textContent = userWins;
     } else if (checkResult(userThrow, computerThrow) === 'loses') {
         userLoses ++;
-        lossesDiv.textContent = userLoses;
+        losesDiv.textContent = userLoses;
     } else if (checkResult(userThrow, computerThrow) === 'draws') {
         userDraws ++;
         drawsDiv.textContent = userDraws;
-        gameTotal ++;
     }
 });
 
 resetButton.addEventListener('click', () => {
-    wins = 0;
-    totals = 0;
+    userWins = 0;
+    userLoses = 0;
+    userDraws = 0;
     winsDiv.textContent = '';
-    totalsDiv.textContent = '';  
+    losesDiv.textContent = '';
+    drawsDiv.textContent = '';
 });
